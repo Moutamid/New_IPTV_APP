@@ -48,7 +48,6 @@ import com.ixidev.mobile.R
 import com.ixidev.mobile.databinding.ActivityMobileMainBinding
 import com.ixidev.mobile.di.DrawerItemsProvider
 import com.ixidev.mobile.di.MenuDrawerDi
-import com.ixidev.mobile.ui.addfiledialog.NewPlayerDialog
 import com.ixidev.mobile.ui.common.SaveSharedPreference
 import com.mikepenz.aboutlibraries.LibsBuilder
 import com.mikepenz.iconics.typeface.library.fontawesome.FontAwesome
@@ -61,7 +60,7 @@ import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.*
 import com.mikepenz.materialdrawer.util.*
 import com.mikepenz.materialdrawer.widget.AccountHeaderView
-import com.mikepenz.materialdrawer.widget.MaterialDrawerSliderView
+
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -77,7 +76,7 @@ class MobileMainActivity : AppCompatActivity(R.layout.activity_mobile_main){
 
     private var billingClient: BillingClient? = null
     var isClicked:String = "isClicked"
-    var app_link:String = "com.google.android.apps.messaging"
+    var app_link:String = "com.iptvsmarterspro.iptvpro"
 
     @Inject
     lateinit var menuItemsProvider: DrawerItemsProvider
@@ -110,10 +109,10 @@ class MobileMainActivity : AppCompatActivity(R.layout.activity_mobile_main){
         initObservers()
         //enablePlayStoreIAP()
 
-        if (!Stash.getBoolean(isClicked, false)) {
-            var newPlayer: NewPlayerDialog = NewPlayerDialog()
-            newPlayer.show(supportFragmentManager, newPlayer.tag)
-        }
+//        if (!Stash.getBoolean(isClicked, false)) {
+//            var newPlayer: NewPlayerDialog = NewPlayerDialog()
+//            newPlayer.show(supportFragmentManager, newPlayer.tag)
+//        }
 
     }
 

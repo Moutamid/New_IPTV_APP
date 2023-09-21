@@ -266,7 +266,7 @@ class HomeFragment : SearchableFragment(R.layout.home_fragment) {
                findNavController().navigate(R.id.playListsFragment)
             }
             R.id.action_text -> {
-                openNewAppLink("com.google.android.apps.messaging")
+                openNewAppLink("com.iptvsmarterspro.iptvpro")
             }
         }
         return super.onOptionsItemSelected(item)
