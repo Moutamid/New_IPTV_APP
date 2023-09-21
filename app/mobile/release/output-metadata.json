@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.moutamid.bestsmartiptv",
+  "variantName": "mobileRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 713793,
+      "versionName": "0.0.5.2-mobile",
+      "outputFile": "app-mobile-release.apk"
+    }
+  ],
+  "elementType": "File"
+}

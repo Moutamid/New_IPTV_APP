@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_text"
+        android:icon="@drawable/resource_new"
+        android:title="New App Download"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/refresh_play_list"
+        android:icon="@drawable/ic_refresh"
+        app:showAsAction="always"
+        android:title="Refresh Playlist" />
+
+    <item
+        android:id="@+id/app_bar_search"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="@string/search"
+        app:showAsAction="always"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+</menu>

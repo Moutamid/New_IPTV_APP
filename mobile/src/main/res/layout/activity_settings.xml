@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.settings.SettingsActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:elevation="5dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        tools:layout_height="52dp"
+        tools:title="@string/settings" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/night_mode_switch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:drawableStart="@drawable/ic_round_dark_mode_24"
+        android:drawablePadding="20dp"
+        android:onClick="switchDarkMode"
+        android:padding="@dimen/_20sdp"
+        android:text="@string/item_dark_mode"
+        app:drawableTint="?android:attr/textColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_gdpr"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ad_solid"
+        android:drawablePadding="20dp"
+        android:gravity="start"
+        android:onClick="openGdprDialog"
+        android:padding="@dimen/_20sdp"
+        android:text="@string/personalized_ads"
+        android:textAllCaps="false"
+        app:drawableTint="?android:attr/textColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/night_mode_switch" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_privacy"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_round_privacy_tip_24"
+        android:drawablePadding="20dp"
+        android:gravity="start"
+        android:onClick="openPrivacy"
+        android:padding="@dimen/_20sdp"
+        android:text="@string/privacy_policy"
+        android:textAllCaps="false"
+        app:drawableTint="?android:attr/textColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_gdpr" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_closeSub"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_round_privacy_tip_24"
+        android:drawablePadding="20dp"
+        android:gravity="start"
+        android:onClick="closeSub"
+        android:padding="@dimen/_20sdp"
+        android:text="Subscriptions Cancel"
+        android:textAllCaps="false"
+        app:drawableTint="?android:attr/textColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_privacy" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
