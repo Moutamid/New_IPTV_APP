@@ -141,11 +141,13 @@ class MobileMainActivity : AppCompatActivity(R.layout.activity_mobile_main){
                 }
             }
 
+/*
         mainBinding.slider.footerView = LayoutInflater.from(this).inflate(R.layout.drawer_banner_item, null)
 
         mainBinding.slider.footerView?.apply {
             setOnClickListener { openNewAppLink() }
         }
+*/
 
         mainBinding.slider.addItems(*menuItemsProvider.items.toTypedArray())
         mainBinding.slider.addStickyDrawerItems(*menuItemsProvider.stickyItems.toTypedArray())

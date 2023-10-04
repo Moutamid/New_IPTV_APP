@@ -74,13 +74,13 @@ object MenuDrawerDi {
                 iconicsIcon = FontAwesome.Icon.faw_cog
                 isSelectable = false
             },
-            DividerDrawerItem(),
+/*            DividerDrawerItem(),
             PrimaryDrawerItem().apply {
                 nameText = "New Apps Download"
                 tag = MenuItemTag.NewApp
                 iconRes = R.drawable.resource_new
                 isSelectable = false
-            },
+            },*/
 /*            ProfileSettingDrawerItem().apply {
                 identifier = 1000L // Choose a unique identifier
                 nameText = "" // No text is displayed
