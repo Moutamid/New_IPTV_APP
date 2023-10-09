@@ -1,10 +1,12 @@
 package com.ixidev.mobile.ui.main
 
 import android.Manifest
+import android.app.Dialog
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.IntentSender
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -70,6 +72,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+import android.graphics.drawable.ColorDrawable
+import android.view.ViewGroup
+import android.view.Window
+import android.widget.Button
 
 @AndroidEntryPoint
 class MobileMainActivity : AppCompatActivity(R.layout.activity_mobile_main){
@@ -113,15 +119,32 @@ class MobileMainActivity : AppCompatActivity(R.layout.activity_mobile_main){
         setupNavController()
         initObservers()
 
-        mainBinding.toolbar.setTitle("Media Player")
+//        mainBinding.toolbar.setTitle("Media Player")
 
-        //enablePlayStoreIAP()
-
-//        if (!Stash.getBoolean(isClicked, false)) {
+        if (!Stash.getBoolean(isClicked, false)) {
+            showWarning()
 //            var newPlayer: NewPlayerDialog = NewPlayerDialog()
 //            newPlayer.show(supportFragmentManager, newPlayer.tag)
-//        }
+        }
 
+    }
+
+    private fun showWarning() {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.show_warning)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialog.setCancelable(false)
+
+        val close = dialog.findViewById<Button>(R.id.close)
+
+        close.setOnClickListener{
+            dialog.dismiss()
+            Stash.put(isClicked, true)
+        }
+
+        dialog.show()
     }
 
     // Yodo1

@@ -35,6 +35,7 @@
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/ic_add_from_xtream_account"
         android:padding="20dp"
+        android:visibility="gone"
         android:text="@string/add_xtream_account"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

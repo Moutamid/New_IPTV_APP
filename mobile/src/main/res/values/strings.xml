@@ -43,4 +43,11 @@
     <string name="settings">Settings</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="please_wait">Loading Please Wait</string>
+    <string name="legal_terms">Media Player is a simple player that plays user-added content. It never provides playlists or content. This app is intended for use only with user-created playlists of legal content. It is your responsibility to check whether the contents of playlists you create or add are legal and to use and/or save the content. We are not responsible for any copyright or misappropriation of third party Content resulting from the use of the App and please check whether your content is legal and/or if you have the rights to register its use. Selecting the confirmation button and continuing means that you have read and accepted all legal texts.
+    \n\n
+        <b>LEGAL WARNING</b>\n\n
+    - Media Player does not provide or request any content or playlists to users.\n
+    - Media Player is not affiliated with any third party provider.\n
+    - Users must provide their own content.\n
+    - We absolutely do not support the streaming of copyrighted material or content without the permission of the copyright owner.</string>
 </resources>
