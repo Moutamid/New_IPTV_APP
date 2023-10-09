@@ -56,9 +56,35 @@
         android:name="com.ixidev.mobile.ui.settings.SettingsActivity"
         android:label="@string/settings"
         tools:layout="@layout/activity_settings" />
+
     <action
         android:id="@+id/action_open_settings"
         app:destination="@id/settingsActivity"
         app:launchSingleTop="true"
         app:popUpTo="@id/homeFragment" />
+
+    <activity
+        android:id="@+id/galleryVideoActivity"
+        android:name="com.ixidev.mobile.ui.GalleryVideoActivity"
+        android:label="Gallery Video Play"
+        tools:layout="@layout/activity_gallery_video" />
+    <action
+        android:id="@+id/action_open_galleryVideo"
+        app:destination="@id/galleryVideoActivity"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/homeFragment" />
+
+    <activity
+        android:id="@+id/remoteControlActivity"
+        android:name="com.ixidev.mobile.ui.RemoteControlsActivity"
+        android:label="Remote Controls"
+        tools:layout="@layout/activity_remote_controls" />
+    <action
+        android:id="@+id/action_open_remoteControls"
+        app:destination="@id/remoteControlActivity"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/homeFragment" />
+
+
+
 </navigation>

@@ -9,7 +9,9 @@
     </item>
 
     <item
-        android:drawable="@mipmap/ic_launcher_foreground"
+        android:width="100dp"
+        android:height="100dp"
+        android:drawable="@drawable/new_logo"
         android:gravity="center" />
 
 </layer-list>

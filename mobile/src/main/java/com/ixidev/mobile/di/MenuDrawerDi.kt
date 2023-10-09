@@ -74,13 +74,21 @@ object MenuDrawerDi {
                 iconicsIcon = FontAwesome.Icon.faw_cog
                 isSelectable = false
             },
-/*            DividerDrawerItem(),
+            DividerDrawerItem(),
             PrimaryDrawerItem().apply {
-                nameText = "New Apps Download"
-                tag = MenuItemTag.NewApp
-                iconRes = R.drawable.resource_new
+                nameText = "Gallery Video Play"
+                tag = MenuItemTag.GalleryVideo
+                iconicsIcon = FontAwesome.Icon.faw_file_video
+//                iconRes = R.drawable.resource_new
                 isSelectable = false
-            },*/
+            },
+            PrimaryDrawerItem().apply {
+                nameText = "Remote Control"
+                tag = MenuItemTag.RemoteControl
+                iconicsIcon = FontAwesome.Icon.faw_tv
+//                iconRes = R.drawable.resource_new
+                isSelectable = false
+            },
 /*            ProfileSettingDrawerItem().apply {
                 identifier = 1000L // Choose a unique identifier
                 nameText = "" // No text is displayed
@@ -120,8 +128,10 @@ object MenuDrawerDi {
         object DarkMode : MenuItemTag()
         object Donation : MenuItemTag()
         object StopAds : MenuItemTag()
-        object NewApp : MenuItemTag()
-        object Banner : MenuItemTag()
+        object GalleryVideo : MenuItemTag()
+        object RemoteControl : MenuItemTag()
+//        object NewApp : MenuItemTag()
+//        object Banner : MenuItemTag()
     }
 
 }

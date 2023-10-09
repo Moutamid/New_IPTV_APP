@@ -1,8 +1,10 @@
 package com.ixidev.mobile.ui.main
 
+import android.Manifest
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.IntentSender
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +13,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
@@ -48,6 +51,7 @@ import com.ixidev.mobile.R
 import com.ixidev.mobile.databinding.ActivityMobileMainBinding
 import com.ixidev.mobile.di.DrawerItemsProvider
 import com.ixidev.mobile.di.MenuDrawerDi
+import com.ixidev.mobile.ui.GalleryVideoActivity
 import com.ixidev.mobile.ui.common.SaveSharedPreference
 import com.mikepenz.aboutlibraries.LibsBuilder
 import com.mikepenz.iconics.typeface.library.fontawesome.FontAwesome
@@ -73,6 +77,7 @@ class MobileMainActivity : AppCompatActivity(R.layout.activity_mobile_main){
     private val mainBinding: ActivityMobileMainBinding by viewBinding()
 
     private val viewModel: MainViewModel by viewModels()
+    private val READ_EXTERNAL_STORAGE_PERMISSION = Manifest.permission.READ_EXTERNAL_STORAGE
 
     private var billingClient: BillingClient? = null
     var isClicked:String = "isClicked"
@@ -107,6 +112,9 @@ class MobileMainActivity : AppCompatActivity(R.layout.activity_mobile_main){
         setupMenuDrawer(savedInstanceState)
         setupNavController()
         initObservers()
+
+        mainBinding.toolbar.setTitle("Media Player")
+
         //enablePlayStoreIAP()
 
 //        if (!Stash.getBoolean(isClicked, false)) {
@@ -125,8 +133,9 @@ class MobileMainActivity : AppCompatActivity(R.layout.activity_mobile_main){
 
         mainBinding.slider.setSavedInstance(savedInstanceState)
         val profile = ProfileDrawerItem().apply {
-            nameText = getString(R.string.app_name)
-            iconRes = com.ixidev.data.R.mipmap.ic_launcher_round
+            nameText = "Media Player"
+            iconRes = R.drawable.new_logo
+//            iconRes = com.ixidev.data.R.mipmap.ic_launcher_round
         }
         // add header view to slider menu
         val identifier =
@@ -158,7 +167,8 @@ class MobileMainActivity : AppCompatActivity(R.layout.activity_mobile_main){
     private fun navigateToAbout() {
         mainBinding.mainRoot.closeDrawers()
         val libsBuilder = LibsBuilder()
-            .withAboutAppName(getString(R.string.app_name))
+            .withAboutIconShown(true)
+            .withAboutAppName("Media Player")
             .withFields(R.string::class.java.fields)
             .withSearchEnabled(true)
         navController().navigate(R.id.action_about_app, Bundle().apply {
@@ -315,20 +325,29 @@ class MobileMainActivity : AppCompatActivity(R.layout.activity_mobile_main){
                 subscribeBilling()
             }
 
-            MenuDrawerDi.MenuItemTag.Donation -> {
-                //startPurchase()
+            MenuDrawerDi.MenuItemTag.GalleryVideo -> {
+                if (ContextCompat.checkSelfPermission(this, READ_EXTERNAL_STORAGE_PERMISSION) == PackageManager.PERMISSION_GRANTED) {
+                    navigateToDispensation(R.id.action_open_galleryVideo)
+                } else {
+                    // Permission is not granted, request it.
+                    ActivityCompat.requestPermissions(
+                        this,
+                        arrayOf(READ_EXTERNAL_STORAGE_PERMISSION),
+                        123
+                    )
+                }
             }
 
-            MenuDrawerDi.MenuItemTag.DarkMode -> {
-                // do nothing
+            MenuDrawerDi.MenuItemTag.RemoteControl -> {
+                navigateToDispensation(R.id.action_open_remoteControls)
             }
 
-            MenuDrawerDi.MenuItemTag.Banner -> {
+/*            MenuDrawerDi.MenuItemTag.Banner -> {
                 openNewAppLink()
             }
             MenuDrawerDi.MenuItemTag.NewApp -> {
                 openNewAppLink()
-            }
+            }*/
 
             MenuDrawerDi.MenuItemTag.Home, null -> {
                 viewModel.setSelectedPlayList(item.identifier.toInt())

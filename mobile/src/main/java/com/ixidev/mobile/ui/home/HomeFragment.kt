@@ -265,9 +265,9 @@ class HomeFragment : SearchableFragment(R.layout.home_fragment) {
             R.id.refresh_play_list -> {
                findNavController().navigate(R.id.playListsFragment)
             }
-            R.id.action_text -> {
+/*            R.id.action_text -> {
                 openNewAppLink("com.iptvsmarterspro.iptvpro")
-            }
+            }*/
         }
         return super.onOptionsItemSelected(item)
     }

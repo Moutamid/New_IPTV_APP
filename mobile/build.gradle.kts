@@ -60,6 +60,9 @@ dependencies {
     kapt("com.google.dagger:hilt-android-compiler:2.38.1")
     //kapt("androidx.hilt:hilt-compiler:1.0.0-beta01")
 
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
+
     implementation("com.google.android.material:material:1.5.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.3")
 
