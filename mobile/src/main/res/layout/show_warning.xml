@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="16dp"
     app:cardCornerRadius="16dp">
 
     <androidx.core.widget.NestedScrollView
@@ -31,7 +32,7 @@
                 android:padding="15dp"
                 style="@style/TextRegular"
                 android:text="@string/legal_terms"
-                android:textSize="18sp" />
+                android:textSize="15sp" />
 
             <Button
                 android:id="@+id/close"
@@ -39,6 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:textSize="18sp"
+                android:textColor="@color/black"
                 style="@style/ButtonRegular"
                 android:text="close" />
 
